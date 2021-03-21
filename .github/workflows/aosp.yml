@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        parts: [init, bootimage, api-stubs-docs, system-api-stubs-docs, test-api-stubs-docs]
+        parts: [init, bootimage, api-stubs-docs, system-api-stubs-docs, test-api-stubs-docs, app_process, services, framework, framework-res, libandroid_runtime, libbinder, device/xiaomi/mido, vendor/xiaomi/mido, frameworks]
     env:
       parts: ${{ matrix.parts }}
     steps:

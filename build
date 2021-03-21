@@ -4,4 +4,4 @@ cd ~/rom
 . build/envsetup.sh
 lunch aosp_mido-user
 rm -rf .repo &
-make $parts
+make $parts || mmma $parts
