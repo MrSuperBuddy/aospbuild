@@ -1,2 +1,5 @@
 #!/bin/bash
-echo build
+cd ~/rom
+. build/envsetup.sh
+lunch aosp_mido-user
+make init
