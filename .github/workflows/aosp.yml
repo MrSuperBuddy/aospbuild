@@ -16,9 +16,7 @@ jobs:
     - name: parts
       run: |
         echo $parts
-    - name: slim
-      run: |
-       time ./slim &
+    - uses: rokibhasansagar/slimhub_actions@main
     - name: swap
       run: |
        time ./swap &
