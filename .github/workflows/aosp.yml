@@ -6,21 +6,23 @@ jobs:
   job1:
     name: aosp
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        parts: [init, bootimage]
     steps:
     - uses: actions/checkout@v2
-
+    - name: parts
+      run: |
+        echo ${{ matrix.parts }}
     - name: slim
       run: |
        time ./slim &
-
     - name: swap
       run: |
        time ./swap &
-
     - name: sync
       run: |
        ./sync
-
     - name: build
       run: |
        ./build
