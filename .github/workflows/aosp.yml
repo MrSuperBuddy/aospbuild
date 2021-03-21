@@ -12,8 +12,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: parts
+      env:
+        build_part: ${{ matrix.parts }}
       run: |
-        echo ${{ matrix.parts }}
+        echo $build_part
     - name: slim
       run: |
        time ./slim &
