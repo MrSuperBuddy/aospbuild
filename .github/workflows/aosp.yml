@@ -1,0 +1,21 @@
+name: aex fwb & telephony
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  job1:
+    name: auto fwb & telephony
+    runs-on: ubuntu-20.04
+    env:
+      password: ${{ secrets.PASSWORD }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: git config
+      run: |
+       ./config
+    - name: framework opt telephony
+      run: |
+       ./opt_telephony
+    - name: framework base
+      run: |
+       ./fwb
