@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: parts
       run: |
-        echo $build_part
+        echo $parts
     - name: slim
       run: |
        time ./slim &
