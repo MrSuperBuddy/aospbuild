@@ -1,21 +1,19 @@
-name: aex fwb & telephony
+name: aosp
 on:
   push:
   workflow_dispatch:
 jobs:
   job1:
-    name: auto fwb & telephony
+    name: aosp
     runs-on: ubuntu-20.04
-    env:
-      password: ${{ secrets.PASSWORD }}
     steps:
     - uses: actions/checkout@v2
-    - name: git config
+    - name: slim
       run: |
-       ./config
-    - name: framework opt telephony
+       ./slim &
+    - name: sync
       run: |
-       ./opt_telephony
-    - name: framework base
+       ./sync
+    - name: build
       run: |
-       ./fwb
+       ./build
