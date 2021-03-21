@@ -10,7 +10,7 @@ jobs:
       matrix:
         parts: [init, bootimage]
     env:
-      build_part: ${{ matrix.parts }}
+      parts: ${{ matrix.parts }}
     steps:
     - uses: actions/checkout@v2
     - name: parts
