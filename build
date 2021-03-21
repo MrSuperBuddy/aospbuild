@@ -1,4 +1,5 @@
 #!/bin/bash
+df -h
 cd ~/rom
 . build/envsetup.sh
 lunch aosp_mido-user
