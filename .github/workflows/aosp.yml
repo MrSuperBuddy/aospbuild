@@ -16,13 +16,15 @@ jobs:
     - name: parts
       run: |
         echo $parts
-    - uses: rokibhasansagar/slimhub_actions@main
+    - name: slim
+      run: |
+        ./slim
     - name: swap
       run: |
-       time ./swap &
+        ./swap
     - name: sync
       run: |
-       ./sync
+        ./sync
     - name: build
       run: |
-       ./build
+        ./build
