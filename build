@@ -4,3 +4,5 @@ cd ~/rom
 lunch aosp_mido-user
 rm -rf .repo &
 make $parts || mmma $parts
+
+df -h

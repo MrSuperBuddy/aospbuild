@@ -9,9 +9,18 @@ cd ~/rom
 repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth=1 -b aex .repo/local_manifests
 
-curl -sL https://github.com/rokibhasansagar/slimhub_actions/raw/main/cleanup.sh | bash &>/dev/null & disown;
-
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 4
 df -h
 time rm -rf .repo
 df -h
+
+case $parts in
+  api-stubs-docs | system-api-stubs-docs | test-api-stubs-docs | services | framework | device/xiaomi/mido | vendor/xiaomi/mido | frameworks )
+    echo "Matches"
+    cd build/soong
+    git fetch https://github.com/CherishOS/android_build_soong
+    git cherry-pick f8a7b22f1fbd712d29ebc71b3ee89ca8ce21caf6
+    git fetch https://github.com/Lineage-X/android_build_soong
+    git cherry-pick 17fd0e16cf55fbc6d3a5429c107e5dcca7625a96
+    ;;
+esac

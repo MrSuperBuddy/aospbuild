@@ -19,6 +19,9 @@ jobs:
     - name: parts
       run: |
         echo $parts
+    - name: packages
+      run: |
+        ./packages &
     - name: swap
       run: |
         ./swap
