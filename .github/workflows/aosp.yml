@@ -7,10 +7,12 @@ jobs:
     name: aosp
     runs-on: ubuntu-20.04
     strategy:
+      fail-fast: false
       matrix:
         parts: [init, bootimage, api-stubs-docs, system-api-stubs-docs, test-api-stubs-docs, app_process, services, framework, framework-res, libandroid_runtime, libbinder, device/xiaomi/mido, vendor/xiaomi/mido, frameworks]
     env:
       parts: ${{ matrix.parts }}
+    continue-on-error: ${{ matrix.parts }}
     steps:
     - uses: actions/checkout@v2
       #- uses: rokibhasansagar/slimhub_actions@main
