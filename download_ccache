@@ -1,0 +1,9 @@
+#!/bin/bash
+
+url=https://roms.apon77.workers.dev/junk/cc/aex/$parts/ccache.tar.gz
+
+cd /tmp
+time aria2c -x16 -s16 $url || time aria2c -x16 -s16 $url 
+
+time tar xf ccache.tar.gz
+rm -rf ccache.tar.gz

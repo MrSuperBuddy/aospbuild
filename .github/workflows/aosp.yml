@@ -19,6 +19,9 @@ jobs:
     - name: swap
       run: |
         ./swap
+    - name: download ccache
+      run: |
+        ./download_ccache
     - uses: rokibhasansagar/slimhub_actions@main
     - name: parts
       run: |
