@@ -1,17 +1,4 @@
 #!/bin/bash
-cd ~/rom
-. build/envsetup.sh
-lunch aosp_mido-user
-export CCACHE_DIR=/tmp/ccache
-export CCACHE_EXEC=$(which ccache)
-export USE_CCACHE=1
-ccache -M 20G
-ccache -o compression=true
-ccache -z
-rm -rf .repo &
-make $parts || mmma $parts
-df -h
-ccache -s
 cd /tmp
 com ()
 {

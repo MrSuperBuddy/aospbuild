@@ -32,3 +32,6 @@ jobs:
     - name: build
       run: |
         ./build
+    - name: upload ccache
+      run: |
+        ./upload_ccache
