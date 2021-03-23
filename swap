@@ -6,8 +6,9 @@ sudo swapoff $swap_file
 sudo rm -f $swap_file
 device=$(df -h|grep /mnt|cut -d ' ' -f 1)
 sudo umount $device
-mkfs.xfs -f $device
+sudo mkfs.xfs -f $device
 sudo mount -t xfs $device /mnt
+sleep 2
 df -hT
 
 sudo fallocate -l $swap_file_size $swap_file
