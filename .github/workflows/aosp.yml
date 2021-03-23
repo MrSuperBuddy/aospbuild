@@ -9,9 +9,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        parts: [init, bootimage, api-stubs-docs, system-api-stubs-docs, test-api-stubs-docs, app_process, services, framework, framework-res, libandroid_runtime, libbinder, device/xiaomi/mido, vendor/xiaomi/mido, frameworks]
+        parts: [init, bootimage, api-stubs-docs, system-api-stubs-docs, test-api-stubs-docs, app_process, services, framework, framework-res, libandroid_runtime, libbinder, device/xiaomi/mido, vendor/xiaomi/mido]
     env:
       parts: ${{ matrix.parts }}
+      rclone_config: ${{ secrets.RCLONE_CONFIG }}
     continue-on-error: true
     steps:
     - uses: actions/checkout@v2
