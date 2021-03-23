@@ -1,1 +1,4 @@
 ccache artifacts
+short storage
+sshfs
+xfs swap

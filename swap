@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
+df -hT
 swap_file=/mnt/swapfile
 swap_file_size=13G
 sudo swapoff $swap_file
 sudo rm -f $swap_file
+device=$(df -h|grep /mnt|cut -d ' ' -f 1)
+mkfs.xfs $device
+sudo mount -t xfs $device /mnt
+df -hT
+
 sudo fallocate -l $swap_file_size $swap_file
 sudo chmod 600 $swap_file
 sudo mkswap $swap_file

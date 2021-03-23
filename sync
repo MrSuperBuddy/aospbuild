@@ -21,6 +21,7 @@ case $parts in
     git cherry-pick f8a7b22f1fbd712d29ebc71b3ee89ca8ce21caf6
     git fetch https://github.com/Lineage-X/android_build_soong
     git cherry-pick 17fd0e16cf55fbc6d3a5429c107e5dcca7625a96
+    cd -
     ;;
 esac
 
