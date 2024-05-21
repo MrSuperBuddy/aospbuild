@@ -6,7 +6,7 @@ git config --global user.name ci
 git config --global user.email ci@ci.ci
 mkdir -p ~/rom
 cd ~/rom
-repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 -u https://android.googlesource.com/platform/manifest/ -b android-8.0.0_r51 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth=1 -b aex .repo/local_manifests
 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 4
@@ -14,7 +14,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 df -h
 
 case $parts in
-  api-stubs-docs | system-api-stubs-docs | test-api-stubs-docs | services | framework | device/xiaomi/mido | vendor/xiaomi/mido | frameworks )
+  api-stubs-docs | system-api-stubs-docs | test-api-stubs-docs | services | framework | device/samsung/galaxysmtd | frameworks )
     echo "Matches"
     cd build/soong
     git fetch https://github.com/CherishOS/android_build_soong
